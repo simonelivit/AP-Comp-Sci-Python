@@ -1,0 +1,24 @@
+#importing choice and time for use in code
+from random import choice
+import time
+
+#Answers that the Magic 8 Ball could give in response
+answers = ['It is likely.', 'It is impossible.', 'Perhaps...', 'Absolutely!', 'I do not think so :(', 'The answer lies within you...']
+
+#Created a function that allows user to input a question, prints a processing message, waits 2 seconds, then prints answer
+
+def userquestions():
+    input('What is your question?: ')
+    print('Please wait... In progress.....')
+    time.sleep(2)
+    print(choice(answers))
+
+#while loop makes the code run until the answer to the second question is 'No', at which point loop with break
+
+while True:
+    userquestions()
+    useranswer = input('Would you like to ask another question? Answer yes or no: ').capitalize()
+    if useranswer == 'No':
+        print('You have quit the game. See you next time!')
+        time.sleep(1)
+        break
